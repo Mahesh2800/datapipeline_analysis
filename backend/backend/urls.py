@@ -14,11 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# from django.contrib import admin
+# from django.urls import path, include
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),      # Admin panel
+#     path('api/', include('orders.urls'))  # Include app's URLs
+# ]
+from django.http import HttpResponse
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),      # Admin panel
-    path('api/', include('orders.urls'))  # Include app's URLs
-]
+def home(request):
+    return HttpResponse("Welcome to the Real-Time E-commerce Data Pipeline")
 
+urlpatterns = [
+    path('', home),  # Root URL
+    path('admin/', admin.site.urls),
+    path('api/', include('orders.urls')),  # Include orders app URLs
+]
