@@ -1,13 +1,22 @@
+/* frontend/src/index.css */
+
+/* --- CRITICAL FIX: Load Tailwind CSS Directives --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Add a smooth scroll and ensure box model is sane */
+/*html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  padding: 0;
+  /* Set a default font that Tailwind won't override */
+ /* font-family: Arial, sans-serif;
+}*/
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* * NOTE: The original plain CSS classes (e.g., .dashboard, .metric-card) 
+ * are now replaced by Tailwind classes directly within your React components (e.g., p-8, shadow-md).
+ * Deleting the incompatible CSS ensures the React styling works.
+ */
